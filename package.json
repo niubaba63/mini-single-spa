@@ -9,10 +9,10 @@
     "lint": "eslint --ext .js,.ts,.d.ts src/",
     "build": "rimraf dist && rollup -c rollup.config.js --environment NODE_ENV:production",
     "dev": "rimraf dist && rollup -c rollup.config.js --environment NODE_ENV:development",
-    "install:main": "cd examples/main && pnpm i --frozen-lockfile",
-    "install:react": "cd examples/react && pnpm i --frozen-lockfile",
-    "install:vue": "cd examples/vue && pnpm i --frozen-lockfile",
-    "install:multiple": "cd examples/multiple && pnpm i --frozen-lockfile",
+    "install:main": "cd examples/main && pnpm i --no-frozen-lockfile",
+    "install:react": "cd examples/react && pnpm i --no-frozen-lockfile",
+    "install:vue": "cd examples/vue && pnpm i --no-frozen-lockfile",
+    "install:multiple": "cd examples/multiple && pnpm i --no-frozen-lockfile",
     "install:all": "run-p install:main install:react install:vue install:multiple",
     "dev:main": "cd examples/main && pnpm dev",
     "dev:react": "cd examples/react && pnpm dev",
@@ -27,12 +27,7 @@
   "bugs": {
     "url": "https://github.com/woai3c/mini-single-spa/issues"
   },
-  "homepage": "https://github.com/woai3c/mini-single-spa#readme",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "FORCE_COLOR=1 node scripts/verify-commit.js"
-    }
+  "homepage": "https://github.com/woai3c/mini-single-spa#readme"
   },
   "lint-staged": {
     "src/**/*.{js,ts}": "eslint"
@@ -57,5 +52,8 @@
     "rollup-plugin-typescript2": "^0.31.1",
     "rollup-plugin-uglify": "^6.0.4",
     "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "all": "^0.0.0"
   }
 }
